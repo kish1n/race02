@@ -5,7 +5,6 @@ int main(int argc, char *argv[]) {
         mx_printerr("usage: ./pathfinder [filename]\n");
         return 1;
     }
-
     int x1 = 0, y1 = 0, x2 = 0, y2 = 0;
 
     if (mx_isnumber(argv[2]) && mx_isnumber(argv[3]) && mx_isnumber(argv[4]) && mx_isnumber(argv[5])) {
