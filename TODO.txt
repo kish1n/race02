@@ -1,1 +1,0 @@
-find_farthest_point find_shortest_path memset
