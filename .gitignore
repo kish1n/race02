@@ -1,3 +1,1 @@
-.idea
-TODO.txt
-way_home
+git rm --cached file.txt
