@@ -6,7 +6,12 @@ int find_shortest_path(int **array, int rows, int cols, Point start, Point end) 
     }
 
     bool visited[rows][cols];
-    memset(visited, false, sizeof(visited));
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            visited[i][j] = false;
+        }
+    }
+
     visited[start.y][start.x] = true;
 
     Queue queue;

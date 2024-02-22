@@ -19,8 +19,6 @@ int **read_map_from_file(const char *filename) {
         }
     }
 
-
-
     close(fd);
     int rows = 0, cols = 0, temp_cols = 0;
     bool new_row = true;
@@ -65,7 +63,7 @@ int **read_map_from_file(const char *filename) {
             row++;
             col = 0;
         } else {
-            map[row][col++] = (content[i] == '.') ? 1 : 0;
+            map[row][col++] = (content[i] == '.') ? 1 : 0; //map
         }
     }
 

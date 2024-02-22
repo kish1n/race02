@@ -2,12 +2,18 @@
 
 int find_farthest_point(int **array, int rows, int cols, Point start, Point *farthest) {
     int steps[rows][cols];
-    memset(steps, -1, sizeof(steps)); // Инициализируем массив шагов значением -1
+
+    // Инициализируем массив steps значением -1 вручную
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            steps[i][j] = -1;
+        }
+    }
 
     Queue queue;
     queue_init(&queue);
     queue_enqueue(&queue, start);
-    steps[start.y][start.x] = 0; // Начальное количество шагов равно 0
+    steps[start.y][start.x] = 0;
 
     int dx[] = {-1, 1, 0, 0};
     int dy[] = {0, 0, -1, 1};
@@ -20,7 +26,7 @@ int find_farthest_point(int **array, int rows, int cols, Point start, Point *far
             int ny = p.y + dy[j];
 
             if (nx >= 0 && ny >= 0 && nx < cols && ny < rows && array[ny][nx] == 1 && steps[ny][nx] == -1) {
-                steps[ny][nx] = steps[p.y][p.x] + 1; // Увеличиваем количество шагов
+                steps[ny][nx] = steps[p.y][p.x] + 1;
                 queue_enqueue(&queue, (Point){nx, ny});
 
                 if (steps[ny][nx] > max_dist) {
